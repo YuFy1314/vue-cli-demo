@@ -1,6 +1,6 @@
 # my-vue-project
 
-> A Vue.js project
+> A Vue.js project with Vue-cli, Element, and Less inside
 
 ## Build Setup
 
