@@ -1,6 +1,7 @@
 # my-vue-project
 
-> A Vue.js project with Vue-cli, Element, and Less inside
+> A Vue.js project with Vue-cli, Element, and Less inside.
+> Please pay attention to [My Blog](https://www.jianshu.com/u/72f239ec5d03) and more content.
 
 ## Build Setup
 
