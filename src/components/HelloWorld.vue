@@ -45,7 +45,7 @@
                         <template slot="title"><i class="el-icon-setting"></i>在项目中掘金</template>
                         <el-menu-item-group>
                             <el-menu-item index="3-1">
-                                <el-tab-pane><a href="https://www.jianshu.com/p/0f00ad5e8e3b" target="_blank">Vue 2.x + Webpack 4.x的那些事</a></el-tab-pane>
+                                <a href="https://www.jianshu.com/p/0f00ad5e8e3b" target="_blank">Vue 2.x + Webpack 4.x的那些事</a>
                             </el-menu-item>
                             <el-menu-item index="3-2">
                                 <a href="https://www.jianshu.com/p/87d6754f6782" target="_blank">Vue项目中的一些问题</a>
@@ -135,21 +135,23 @@ export default {
         },
         deleteRow(index, rows) {
             this.$confirm('此操作将永久删除该文件, 是否继续?', '提示', {
-                confirmButtonText: '确定',
-                cancelButtonText: '取消',
-                type: 'warning'
-            }).then(() => {
-                rows.splice(index, 1);
-                this.$message({
-                    type: 'success',
-                    message: '删除成功!'
+                    confirmButtonText: '确定',
+                    cancelButtonText: '取消',
+                    type: 'warning'
+                })
+                .then(() => {
+                    rows.splice(index, 1);
+                    this.$message({
+                        type: 'success',
+                        message: '删除成功!'
+                    });
+                })
+                .catch(() => {
+                    this.$message({
+                        type: 'info',
+                        message: '已取消删除'
+                    });
                 });
-            }).catch(() => {
-                this.$message({
-                    type: 'info',
-                    message: '已取消删除'
-                });
-            });
         }
     },
     created() {
@@ -157,6 +159,7 @@ export default {
         this.tableData = Array(20).fill(this.data);
     }
 }
+
 </script>
 <style scoped lang="less">
 [v-cloak] {
@@ -196,4 +199,5 @@ export default {
 a {
     text-decoration: none;
 }
+
 </style>
